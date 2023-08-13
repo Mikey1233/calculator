@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+ <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta charset='utf-8'>
+<title>Calculator project</title>
+<link href='index.css' rel='stylesheet' type='text/css'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script defer src='index.js'></script>
+
+</head> 
+<body>  
+    <div class="container">
+         <main class="calc__body">
+          <div class="calc__display">
+            <div class="input"><span class="zero">0</span></div>
+            <div class="ans"></div>
+          </div>
+          <div class="operations">
+            <div class="row_1">
+                <span data-key="percent"  class="btn percent_btn math">%</span>
+                <span data-key="(" class="btn clear">(</span>
+                <span data-key=")" class="btn clear">)</span>
+                <span data-key="backSpace" class="btn clear_prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace" data-key="backSpace" viewBox="0 0 16 16">
+                  <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+                  <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+                </svg></span>
+                <span data-key="divide" class="btn ope divide_btn">&divide;</span>
+              </div>
+  
+              <div class="row_2">
+                <span  data-key="root" class="btn sqr-root math">&Sqrt;</span>
+                <span data-key=7 class="btn num seven">7</span>
+                <span data-key=8 class="btn num eight">8</span>
+                <span data-key=9 class="btn num nine">9</span>
+                <span data-key="times" class="btn ope multiply_btn">&times;</span>
+              </div>
+  
+              <div class="row_3">
+                <div data-key="square" class="btn sqr math">x<sup>2</sup></div>
+                <span data-key=4 class="btn num four">4</span>
+                <span data-key=5 class="btn num five">5</span>
+                <span data-key=6 class="btn num six">6</span>
+                <span data-key="subtract" class="btn ope subtract">-</span>
+              </div>
+  
+              <div class="row_4">
+                <span data-key="cube" class="btn cube math">x<sup>3</sup></span>
+                <span data-key=1 class="btn num one">1</span>
+                <span data-key=2 class="btn num two">2</span>
+                <span data-key=3 class="btn num three">3</span>
+                <span data-key="add" class="btn ope add">+</span>
+              </div>
+              
+              <div class="row_5">
+                <div data-key="inverse" class="btn inverse math">1/x</div>
+                <span data-key="AC" class="btn ac">AC</span>
+                <span data-key=0 class="btn num ">0</span>
+                <span data-key='.' class="btn  dot">.</span>
+                <span data-key="equals" class="btn ope equals">=</span>
+              </div>
+          </div>
+         </main>
+
+         <aside class="history__section">
+          <div class="title">History</div>
+          <div class="history"><div class="intro">There's no history yet</div>
+          <div ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3 svg" viewBox="0 0 16 16">
+            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+          </svg></div></div>
+
+         </aside>
+       
+    </div>
+  <!----  <div><img src="trash-can.svg" class="svg" alt="trash-can"></div>-->
+  
+
+</body>
+</html>
