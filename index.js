@@ -355,40 +355,28 @@ window.addEventListener("load", function () {
     }
   }
 });
-//window event
+// Event listener for touchmove to detect upward scrolling
+//window.addEventListener("touchmove", handleTouchMove);*/
+//////////////yo 395ines🎃
+////////////////////////////////////////////////
+let startX = null;
 
-/*window.addEventListener("touchmove", function (e) {
-    
-    
-  if (e.touches[0].clientY < e.touches[0].previousClientY) {
-   
-    
-  }
-});*/
+document.addEventListener("touchstart", (event) => {
+  startX = event.touches[0].clientX;
+});
 
-// Select the element you want to listen for touch events on
-const targetElement = document.querySelector("body");
+document.addEventListener("touchmove", (event) => {
+  if (startX === null) return;
 
-let startY = 0;
+  const currentX = event.touches[0].clientX;
+  const deltaX = currentX - startX;
 
-// Function to handle the touchmove event
-function handleTouchMove(event) {
-  const touch = event.touches[0];
-  const deltaY = touch.clientY - startY;
-
-  if (deltaY > 0) {
+  if (deltaX > 0) {
     historySection.classList.add("active");
   }
-}
+
+  startX = null;
+});
 document.querySelector(".times").addEventListener("click", function () {
   historySection.classList.remove("active");
 });
-// Event listener for touchstart to capture initial touch position
-window.addEventListener("touchstart", event => {
-  startY = event.touches[0].clientY;
-});
-
-// Event listener for touchmove to detect upward scrolling
-window.addEventListener("touchmove", handleTouchMove);
-
-//////////////yo 395ines🎃
