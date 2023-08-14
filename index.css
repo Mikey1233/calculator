@@ -6,9 +6,11 @@
 }
 .container {
   display: grid;
+  overflow-y: hidden;
   background-color: #242424;
   grid-template-columns: 75% auto;
   padding: 3px;
+  min-height: 100vh;
   column-gap: 1px;
 }
 .calc__body {
@@ -153,7 +155,7 @@
 @media screen and (max-width: 850px) {
   .container {
     grid-template-columns: 1fr;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0;
   }
   .calc__display {
