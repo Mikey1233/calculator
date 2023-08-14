@@ -76,7 +76,6 @@
   color: white;
   position: relative;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  overflow-y: scroll;
 }
 .title {
   font-weight: bold;
