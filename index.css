@@ -153,7 +153,7 @@
 @media screen and (max-width: 850px) {
   .container {
     grid-template-columns: 1fr;
-    min-height: 100vh;
+    height: 100vh;
     padding: 0;
   }
   .calc__display {
