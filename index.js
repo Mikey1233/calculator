@@ -2,12 +2,13 @@
 const input = document.querySelector(".input");
 const ans = document.querySelector(".ans");
 const history = document.querySelector(".history");
-const historySection = document.querySelector('.history__section')
+const historySection = document.querySelector(".history__section");
 const num = document.querySelectorAll(".btn");
 const intro = document.querySelector(".intro");
 let zero = document.querySelector(".zero");
 const trashCan = document.querySelector(".svg");
-trashCan.classList.add("act");
+trashCan.classList.add("hiddenTrash");
+//trashCan.classList.remove("act");
 
 const allNum = [...num];
 const numformat = {
@@ -109,7 +110,7 @@ function clearHistory() {
     localStorage.clear();
     input.innerHTML = 0;
     ans.innerHTML = null;
-    trashCan.classList.add("act");
+    // trashCan.classList.("hiddenTrash");
   });
 }
 clearHistory(); //activation
@@ -188,11 +189,14 @@ function validate(str, num = 1) {
 function historyTab(input, ans) {
   if (intro) {
     intro.remove();
-    trashCan.classList.remove("act");
+
+    trashCan.classList.remove("hiddenTrash");
+    history.append(trashCan);
     const html = `<div> <span class='small'>${input.innerHTML}</span> = ${ans.innerHTML}</div>`;
     history.insertAdjacentHTML("afterBegin", html);
     sendToLocalStorage(input.innerHTML, ans.innerHTML);
   } else {
+    trashCan.classList.remove("hiddenTrash");
     const html = `<div> <span class='small>${input.innerHTML}</span> = ${ans.innerHTML}</div>`;
     history.insertAdjacentHTML("afterBegin", html);
     sendToLocalStorage(input.innerHTML, ans.innerHTML);
@@ -206,7 +210,9 @@ function historyTab(input, ans) {
 function historyTab2(input, ans, state) {
   if (intro) {
     intro.remove();
-    trashCan.classList.remove("act");
+    trashCan.classList.remove("hiddenTrash");
+    history.append(trashCan);
+    //////////////////////////////trashCan.classList.remove("act");
     const html = `<div><span class='small'> ${state} ( ${input.innerHTML} )</span> = ${ans.innerHTML}</div>`;
     history.insertAdjacentHTML("afterBegin", html);
     sendToLocalStorage(input.innerHTML, ans.innerHTML);
@@ -311,14 +317,13 @@ function sendToLocalStorage(input, ans) {
 
 //code to get data fom the local storage wheb the web page is reloaded
 window.addEventListener("load", function () {
-    this.alert('sroll downward to check your history')
   let html = JSON.parse(this.localStorage.getItem("dataStorage"));
   if (html === null) {
     intro.classList.add("act");
   }
   if (intro) {
     if (html !== null) {
-      trashCan.classList.remove("act");
+      trashCan.classList.remove("hiddenTrash");
       intro.remove();
       html.forEach(function (arr) {
         if (
@@ -353,17 +358,16 @@ window.addEventListener("load", function () {
 //window event
 
 /*window.addEventListener("touchmove", function (e) {
-    console.log(e.touches[0].clientY)
-    console.log(e.touches[0])
+    
+    
   if (e.touches[0].clientY < e.touches[0].previousClientY) {
    
-    console.log("User is scrolling upward");
+    
   }
 });*/
 
-
 // Select the element you want to listen for touch events on
-const targetElement = document.querySelector('body');
+const targetElement = document.querySelector("body");
 
 let startY = 0;
 
@@ -372,20 +376,19 @@ function handleTouchMove(event) {
   const touch = event.touches[0];
   const deltaY = touch.clientY - startY;
 
-  if (deltaY < 0) {
-    console.log('User is scrolling upward');
-    historySection.classList.add('active')
-  }else if(deltaY > 0){
-    historySection.classList.remove('active')
-
+  if (deltaY > 0) {
+    historySection.classList.add("active");
   }
 }
-
+document.querySelector(".times").addEventListener("click", function () {
+  historySection.classList.remove("active");
+});
 // Event listener for touchstart to capture initial touch position
-window.addEventListener('touchstart', (event) => {
+window.addEventListener("touchstart", event => {
   startY = event.touches[0].clientY;
 });
 
 // Event listener for touchmove to detect upward scrolling
-window.addEventListener('touchmove', handleTouchMove);
-console.log(historySection)
+window.addEventListener("touchmove", handleTouchMove);
+
+//////////////yo 395ines🎃
