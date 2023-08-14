@@ -2,11 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
 }
 .container {
   display: grid;
-  height: 100vh;
   background-color: #242424;
   grid-template-columns: 75% auto;
   padding: 3px;
@@ -179,7 +178,6 @@
     background-color: #242424;
     box-shadow: -1px -3px 9px 1px #1e1d1d;
     transition: all 0.7s;
-    border-radius: 0px 0px 30px 30px;
   }
   .title {
     padding: 10px;
@@ -197,7 +195,11 @@
     position: absolute;
   }
   .btn {
-    padding: 20px 3px;
+    padding: 5px 3px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .btn:hover {
     background-color: unset;
