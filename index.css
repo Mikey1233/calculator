@@ -9,6 +9,7 @@
   background-color: #242424;
   grid-template-columns: 75% auto;
   padding: 3px;
+  height:100vh;
   column-gap: 1px;
 }
 .calc__body {
